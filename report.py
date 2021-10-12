@@ -26,7 +26,7 @@ template_map = (
 template_line = '{},{},{},{},{}'
 
 def load_results():
-    with open('/Users/eugen/applause/elf.auto/outp.log', mode='r') as csv_file:
+    with open('/tmp/report.txt', mode='r') as csv_file:
         global csv_list
         csv_list = [{k: v for k, v in row.items()}
             for row in csv.DictReader(csv_file, skipinitialspace=True)]
