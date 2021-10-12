@@ -26,11 +26,11 @@ template_map = (
 template_line = '{},{},{},{},{}'
 
 def load_results():
-    with open('/tmp/report.txt', mode='r') as csv_file:
+    with open('/Users/eugen/applause/elf.auto/outp.log', mode='r') as csv_file:
         global csv_list
         csv_list = [{k: v for k, v in row.items()}
             for row in csv.DictReader(csv_file, skipinitialspace=True)]
-        print 'Total rows loaded {}'.format(len(csv_list))
+        print("Total rows loaded {}".format(len(csv_list)))
 
 
 def s(test, platform_country):
@@ -52,9 +52,9 @@ def report():
 
     # Print headers
     row_h = template_map[0];
-    print template_line.format('Platform\Testcase', row_h[1].keys()[0], row_h[2].keys()[0], row_h[3].keys()[0], row_h[4].keys()[0])
+    print(template_line.format('Platform\Testcase', row_h[1].keys()[0], row_h[2].keys()[0], row_h[3].keys()[0], row_h[4].keys()[0]))
     for row in template_map:
-        print template_line.format(row[0], s(row[0], row[1]), s(row[0], row[2]), s(row[0], row[2]), s(row[0], row[2]))
+        print (template_line.format(row[0], s(row[0], row[1]), s(row[0], row[2]), s(row[0], row[2]), s(row[0], row[2])))
 
 
 
