@@ -35,11 +35,11 @@ def load_results():
 
 def s(test, platform_country):
     result = ''
-    for country in platform_country.values()[0]:
+    for country in list(platform_country.values())[0]:
         for line in csv_list:
             if line["Test Name"] == test:
                 if line["Country"] == country:
-                    if line["Platform"] == platform_country.keys()[0]:
+                    if line["Platform"] == list(platform_country.keys())[0]:
                         if line["Build ID"] == 'BUILD_ID:'+build_id:
                             result = result + country +':'+ line["Order ID"]+' '
     if result == '':
@@ -52,7 +52,7 @@ def report():
 
     # Print headers
     row_h = template_map[0];
-    print(template_line.format('Platform\Testcase', row_h[1].keys()[0], row_h[2].keys()[0], row_h[3].keys()[0], row_h[4].keys()[0]))
+    print(template_line.format('Platform\Testcase', list(row_h[1].keys())[0], list(row_h[2].keys())[0], list(row_h[3].keys())[0], list(row_h[4].keys())[0]))
     for row in template_map:
         print (template_line.format(row[0], s(row[0], row[1]), s(row[0], row[2]), s(row[0], row[2]), s(row[0], row[2])))
 
