@@ -7,6 +7,7 @@ iphone = 'iPHONE(safari)'
 android = 'ANDROID(Chrome)'
 pc = 'PC(chrome)'
 mac ='MAC(Safari)'
+company = sys.argv[2]
 build_id = sys.argv[1]
 
 template_map = (
@@ -20,8 +21,8 @@ template_map = (
     ['Giftcard + CreditCard checkout', {iphone: ['US']}, {android: ['US']}, {pc: ['US']}, {mac: ['US']}],
     ['Giftcard and Paypal checkout', {iphone: ['US']}, {android: ['US']}, {pc: ['US']}, {mac: ['US']}],
     ['Giftcard and Afterpay checkout', {iphone: ['US']}, {android: ['US']}, {pc: ['US']}, {mac: ['US']}],
-                ['Klarna checkout DD', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc: ['EU', 'DE']}, {mac: ['EU', 'DE']}],
-               ['Klarna checkout OP', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc: ['EU', 'DE']}, {mac: ['EU', 'DE']}])
+                ['Klarna checkout DDT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc: ['EU', 'DE']}, {mac: ['EU', 'DE']}],
+               ['Klarna checkout OBT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc: ['EU', 'DE']}, {mac: ['EU', 'DE']}])
 
 template_line = '{},{},{},{},{}'
 
@@ -37,11 +38,12 @@ def s(test, platform_country):
     result = ''
     for country in list(platform_country.values())[0]:
         for line in csv_list:
-            if line["Test Name"] == test:
-                if line["Country"] == country:
-                    if line["Platform"] == list(platform_country.keys())[0]:
-                        if line["Build ID"] == 'BUILD_ID:'+build_id:
-                            result = result + country +':'+ line["Order ID"]+' '
+            if line["Company"] == company:
+                if line["Test Name"] == test:
+                    if line["Country"] == country:
+                        if line["Platform"] == list(platform_country.keys())[0]:
+                            if line["Build ID"] == 'BUILD_ID:'+build_id:
+                                result = result + country +':'+ line["Order ID"]+' '
     if result == '':
         return 'NA'
     else:
