@@ -31,13 +31,15 @@ def load_results():
         global csv_list
         csv_list = [{k: v for k, v in row.items()}
             for row in csv.DictReader(csv_file, skipinitialspace=True)]
-        print("Total rows loaded {}".format(len(csv_list)))
+        c
 
 
 def s(test, platform_country):
     result = ''
     for country in list(platform_country.values())[0]:
         for line in csv_list:
+            print("company {}".format(line["Company"]))
+            print("company pa {}".format(company))
             if company in line["Company"]:
                 if line["Test Name"] == test:
                     if line["Country"] == country:
