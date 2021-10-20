@@ -33,7 +33,6 @@ def load_results():
             for row in csv.DictReader(csv_file, skipinitialspace=True)]
 
 
-
 def s(test, platform_country):
     result = ''
     for country in list(platform_country.values())[0]:
