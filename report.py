@@ -37,8 +37,6 @@ def s(test, platform_country):
     result = ''
     for country in list(platform_country.values())[0]:
         for line in csv_list:
-            print("company {}".format(line["Company"]))
-            print("company pa {}".format(company))
             if company in line["Company"]:
                 if line["Test Name"] == test:
                     if line["Country"] == country:
