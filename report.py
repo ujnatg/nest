@@ -38,7 +38,7 @@ def s(test, platform_country):
     result = ''
     for country in list(platform_country.values())[0]:
         for line in csv_list:
-            if line["Company"] == company:
+            if company in line["Company"]:
                 if line["Test Name"] == test:
                     if line["Country"] == country:
                         if line["Platform"] == list(platform_country.keys())[0]:
