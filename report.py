@@ -31,7 +31,7 @@ def load_results():
         global csv_list
         csv_list = [{k: v for k, v in row.items()}
             for row in csv.DictReader(csv_file, skipinitialspace=True)]
-        c
+
 
 
 def s(test, platform_country):
