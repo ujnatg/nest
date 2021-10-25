@@ -53,7 +53,7 @@ def report():
 
     # Print headers
     row_h = template_map[0];
-    print(template_line.format('Platform\Testcase', list(row_h[1].keys())[0], list(row_h[2].keys())[0], list(row_h[3].keys())[0], list(row_h[4].keys())[0]))
+    print(template_line.format('Testcase', list(row_h[1].keys())[0], list(row_h[2].keys())[0], list(row_h[3].keys())[0], list(row_h[4].keys())[0]))
     for row in template_map:
         print (template_line.format(row[0], s(row[0], row[1]), s(row[0], row[2]), s(row[0], row[3]), s(row[0], row[4])))
 
