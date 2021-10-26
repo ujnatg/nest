@@ -13,10 +13,10 @@ build_id = sys.argv[1]
 
 template_map = (
     ['Paypal Express checkout', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
-    ['ApplePay checkout', {iphone: ['US', 'UK']}, {android: ['US', 'UK']},  {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'UK']}],
-    ['Guest checkout', {iphone: ['US', 'CA', 'UK', 'EU', 'DE']}, {android: ['US', 'CA', 'UK', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'UK', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'UK', 'EU', 'DE']}, {mac: ['US', 'CA', 'UK', 'EU', 'DE']}],
-    ['Paypal checkout', {iphone: ['US', 'CA', 'UK', 'EU', 'DE']}, {android: ['US', 'CA', 'UK', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'UK', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'UK', 'EU', 'DE']}, {mac: ['US', 'CA', 'UK', 'EU', 'DE']}],
-    ['Afterpay checkout', {iphone: ['US', 'UK']}, {android: ['US', 'UK']}, {pc_chrome: ['US', 'UK']}, {pc_edge: ['US', 'UK']}, {mac: ['US', 'UK']}],
+    ['ApplePay checkout', {iphone: ['US', 'GB']}, {android: ['US', 'GB']},  {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
+    ['Guest checkout', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
+    ['Paypal checkout', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
+    ['Afterpay checkout', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
     ['Giftcard checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['Giftcard(multi) checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['Giftcard + CreditCard checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
