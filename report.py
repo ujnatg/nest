@@ -22,8 +22,8 @@ template_map = (
     ['Giftcard + CreditCard checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['Giftcard and Paypal checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['Giftcard and Afterpay checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
-                ['Klarna checkout DDT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}],
-               ['Klarna checkout OBT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}])
+                ['Klarna checkout DDT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chrome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}],
+               ['Klarna checkout OBT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chrome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}])
 
 template_line = '{},{},{},{},{},{}'
 
