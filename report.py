@@ -36,7 +36,7 @@ def load_results():
 
 def s(test, platform_country):
     result = ''
-    for country in list(platform_country.values())[0]
+    for country in list(platform_country.values())[0]:
         country_result = ''
         for line in csv_list:
             if company in line["Company"]:
