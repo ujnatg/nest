@@ -36,18 +36,20 @@ def load_results():
 
 def s(test, platform_country):
     result = ''
-    for country in list(platform_country.values())[0]:
+    for country in list(platform_country.values())[0]
+        country_result = ''
         for line in csv_list:
             if company in line["Company"]:
                 if line["Test Name"] == test:
                     if line["Country"] == country:
                         if line["Platform"] == list(platform_country.keys())[0]:
                             if line["Build ID"] == 'BUILD_ID:'+build_id:
-                                result = result + country +':'+ line["Order ID"]+' '
-    if result == '':
-        return 'NA'
-    else:
-        return result.strip()
+                                country_result = line["Order ID"]
+                                result = result + country +':'+ country_result+' '
+        if country_result == '':
+            result = result + country +':'+ 'NA'+' '
+   
+    return result.strip()
 
 def report():
     load_results()
