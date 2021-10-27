@@ -13,7 +13,7 @@ build_id = sys.argv[1]
 
 template_map = (
     ['Paypal Express checkout', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
-    ['ApplePay checkout', {iphone: ['US', 'GB']}, ,  , , {mac: ['US', 'GB']}],
+    ['ApplePay checkout', {iphone: ['US', 'GB']}, None,  None, None, {mac: ['US', 'GB']}],
     ['Guest checkout', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
     ['Paypal checkout', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
     ['Afterpay checkout', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
