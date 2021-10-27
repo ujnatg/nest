@@ -5,7 +5,7 @@ import sys
 csv_list = None
 iphone = 'iPHONE(safari)'
 android = 'ANDROID(Chrome)'
-pc_edge = 'PC(edge)'
+pc_edge = 'PC(msedge)'
 pc_chrome = 'PC(chrome)'
 mac ='MAC(Safari)'
 company = sys.argv[2]
