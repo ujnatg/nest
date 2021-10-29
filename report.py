@@ -11,20 +11,46 @@ mac ='MAC(Safari)'
 company = sys.argv[2]
 build_id = sys.argv[1]
 
-template_map = (
+elf_template_map = (
     ['Login', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
-    ['Paypal Express checkout', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
-    ['ApplePay checkout', {iphone: ['US', 'GB']}, None,  None, None, {mac: ['US', 'GB']}],
-    ['Guest checkout', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
-    ['Paypal checkout', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
-    ['Afterpay checkout', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
-    ['Giftcard checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
-    ['Giftcard(multi) checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
-    ['Giftcard + CreditCard checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
-    ['Giftcard and Paypal checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
-    ['Giftcard and Afterpay checkout', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
-                ['Klarna checkout DDT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chrome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}],
-               ['Klarna checkout OBT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chrome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}])
+    ['Paypal Express (PPE)', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
+    ['ApplePay', {iphone: ['US', 'GB']}, None,  None, None, {mac: ['US', 'GB']}],
+    ['Credit Card (CC)', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
+    ['Paypal (PP)', {iphone: ['US', 'CA', 'GB', 'EU', 'DE']}, {android: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_chrome: ['US', 'CA', 'GB', 'EU', 'DE']}, {pc_edge: ['US', 'CA', 'GB', 'EU', 'DE']}, {mac: ['US', 'CA', 'GB', 'EU', 'DE']}],
+    ['Afterpay (AP)', {iphone: ['US', 'GB']}, {android: ['US', 'GB']}, {pc_chrome: ['US', 'GB']}, {pc_edge: ['US', 'GB']}, {mac: ['US', 'GB']}],
+    ['GC single', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC multi', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + CC', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + PP', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + AP', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+                ['Klarna DDT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chrome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}],
+               ['Klarna OBT', {iphone: ['EU', 'DE']}, {android:['EU', 'DE']}, {pc_chrome: ['EU', 'DE']}, {pc_edge: ['EU', 'DE']}, {mac: ['EU', 'DE']}])
+
+keys_template_map = (
+    ['Login', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Paypal Express (PPE)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['ApplePay', {iphone: ['US']}, None,  None, None, {mac: ['US']}],
+    ['Credit Card (CC)', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Paypal (PP)', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Afterpay (AP)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC single', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC multi', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + CC', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + PP', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + AP', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}])
+
+well_template_map = (
+    ['Login', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Paypal Express (PPE)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['ApplePay', {iphone: ['US']}, None,  None, None, {mac: ['US']}],
+    ['Credit Card (CC)', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Paypal (PP)', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Afterpay (AP)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC single', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC multi', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + CC', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + PP', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['GC + AP', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}])
 
 template_line = '{},{},{},{},{},{}'
 
@@ -56,7 +82,15 @@ def s(test, platform_country):
 
 def report():
     load_results()
-
+    template_map = []
+    if company == "ELF":
+        template_map = elf_template_map
+    elif company == "KEYS":
+        template_map = keys_template_map
+    elif company == "W3LL":
+        template_map = well_template_map
+        
+        
     # Print headers
     row_h = template_map[0];
     print(template_line.format('Testcase', list(row_h[1].keys())[0], list(row_h[2].keys())[0], list(row_h[3].keys())[0], list(row_h[4].keys())[0], list(row_h[5].keys())[0]))
