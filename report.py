@@ -40,11 +40,11 @@ keys_template_map = (
     ['GC + AP', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}])
 
 well_template_map = (
-    ['Login', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Login', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['Paypal Express (PPE)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['ApplePay', {iphone: ['US']}, None,  None, None, {mac: ['US']}],
-    ['Credit Card (CC)', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
-    ['Paypal (PP)', {iphone: ['US', 'CA']}, {android: ['US', 'CA']}, {pc_chrome: ['US', 'CA']}, {pc_edge: ['US', 'CA']}, {mac: ['US', 'CA']}],
+    ['Credit Card (CC)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
+    ['Paypal (PP)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['Afterpay (AP)', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['GC single', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
     ['GC multi', {iphone: ['US']}, {android: ['US']}, {pc_chrome: ['US']}, {pc_edge: ['US']}, {mac: ['US']}],
